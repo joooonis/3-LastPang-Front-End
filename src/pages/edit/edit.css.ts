@@ -1,35 +1,35 @@
 import { style } from '@vanilla-extract/css';
 
-import { vars } from '@/styles/theme.css';
+import { theme } from '@/styles/theme.css';
 
 export const progressBar = style({
   width: `100%`,
-  height: vars.space['2xs'],
-  backgroundColor: vars.colors.grey[200],
-  borderRadius: vars.radii.sm,
+  height: theme.space['2xs'],
+  backgroundColor: theme.colors.grey[200],
+  borderRadius: theme.radii.sm,
 });
 
 export const progressText = style({
   display: `flex`,
   justifyContent: 'flex-end',
-  fontSize: vars.fontSize.md,
-  fontWeight: vars.fontWeights.bold,
-  marginBottom: vars.space['2xs'],
+  fontSize: theme.fontSize.md,
+  fontWeight: theme.fontWeights.bold,
+  marginBottom: theme.space['2xs'],
 });
 
 export const heading = style({
-  fontSize: vars.fontSize.xl,
-  fontWeight: vars.fontWeights.bold,
-  color: vars.colors.heading,
-  marginLeft: vars.space.xs,
-  marginBottom: vars.space.lg,
+  fontSize: theme.fontSize.xl,
+  fontWeight: theme.fontWeights.bold,
+  color: theme.colors.heading,
+  marginLeft: theme.space.xs,
+  marginBottom: theme.space.lg,
 });
 
 export const caption = style({
-  fontSize: vars.fontSize.sm,
-  fontWeight: vars.fontWeights.regular,
-  color: vars.colors.primary.main,
-  marginLeft: vars.space.xs,
+  fontSize: theme.fontSize.sm,
+  fontWeight: theme.fontWeights.regular,
+  color: theme.colors.primary.main,
+  marginLeft: theme.space.xs,
 });
 
 export const cardWrapper = style({
@@ -37,10 +37,10 @@ export const cardWrapper = style({
   flexDirection: `column`,
   justifyContent: `space-between`,
   alignItems: `left`,
-  padding: vars.space.sm,
-  marginTop: vars.space.md,
-  borderRadius: vars.radii.lg,
-  boxShadow: vars.boxShadow.md,
+  padding: theme.space.sm,
+  marginTop: theme.space.md,
+  borderRadius: theme.radii.lg,
+  boxShadow: theme.boxShadow.md,
 });
 
 export const card = style({
@@ -48,20 +48,20 @@ export const card = style({
   flexDirection: `column`,
   justifyContent: `space-between`,
   alignItems: `left`,
-  padding: vars.space.md,
-  borderRadius: vars.radii.lg,
-  border: `1px solid ${vars.colors.primary.main}`,
-  marginBottom: vars.space.sm,
+  padding: theme.space.md,
+  borderRadius: theme.radii.lg,
+  border: `1px solid ${theme.colors.primary.main}`,
+  marginBottom: theme.space.sm,
 });
 
 export const cardTitle = style({
-  fontSize: vars.fontSize.lg,
-  fontWeight: vars.fontWeights.bold,
-  color: vars.colors.primary.main,
+  fontSize: theme.fontSize.lg,
+  fontWeight: theme.fontWeights.bold,
+  color: theme.colors.primary.main,
 });
 
 export const cardText = style({
-  fontSize: vars.fontSize.xs,
-  fontWeight: vars.fontWeights.regular,
-  color: vars.colors.body,
+  fontSize: theme.fontSize.xs,
+  fontWeight: theme.fontWeights.regular,
+  color: theme.colors.body,
 });

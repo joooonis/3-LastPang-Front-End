@@ -1,24 +1,24 @@
 import { style } from '@vanilla-extract/css';
 
-import { vars } from '@/styles/theme.css';
+import { theme } from '@/styles/theme.css';
 import { breakpoints } from '@/styles/theme.css';
 
 export const wrapper = style({
-  backgroundColor: vars.colors.background,
-  color: vars.colors.body,
+  backgroundColor: theme.colors.background,
+  color: theme.colors.body,
   height: `100vh`,
   width: `100%`,
   display: `flex`,
   justifyContent: `center`,
   alignItems: `center`,
-  fontSize: vars.fontSize.md,
+  fontSize: theme.fontSize.md,
 });
 
 export const innerWrapper = style({
   maxWidth: breakpoints.mobile,
   width: `100%`,
   minHeight: `100%`,
-  padding: vars.space.md,
-  paddingTop: vars.space.lg,
-  border: `1px solid ${vars.colors.purple[500]}`,
+  padding: theme.space.md,
+  paddingTop: theme.space.lg,
+  border: `1px solid ${theme.colors.purple[500]}`,
 });

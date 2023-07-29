@@ -40,7 +40,7 @@ export const breakpoints = {
   desktop: 1200,
 };
 
-export const vars = createThemeContract({
+export const theme = createThemeContract({
   colors: {
     primary: {
       lightest: ``,
@@ -130,7 +130,7 @@ const commonVars = {
   },
 };
 
-export const lightThemeClass = createTheme(vars, {
+export const lightThemeClass = createTheme(theme, {
   colors: {
     primary: {
       lightest: colors.purple[50],
@@ -148,7 +148,7 @@ export const lightThemeClass = createTheme(vars, {
   ...commonVars,
 });
 
-export const darkThemeClass = createTheme(vars, {
+export const darkThemeClass = createTheme(theme, {
   colors: {
     primary: {
       main: colors.purple[500],
