@@ -87,6 +87,7 @@ export const vars = createThemeContract({
   radii: {
     sm: ``,
     md: ``,
+    lg: ``,
     full: ``,
   },
 });
@@ -96,7 +97,7 @@ const commonVars = {
     '2xs': '0.4rem', // 6px
     xs: '0.5rem', // 8px
     sm: '1rem', // 16px
-    md: '1.5rem', // 24px
+    md: '1.25rem', // 20px
     lg: '2rem', // 32px
     xl: '3rem', // 48px
     '2xl': '4rem', // 64px
@@ -122,8 +123,9 @@ const commonVars = {
     lg: `0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)`,
   },
   radii: {
-    sm: `0.2rem`,
-    md: `0.4rem`,
+    sm: `0.25rem`, // 4px
+    md: `1rem`, // 16px
+    lg: `1.25rem`, // 20px
     full: `100%`,
   },
 };
