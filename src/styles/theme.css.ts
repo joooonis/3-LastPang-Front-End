@@ -1,8 +1,5 @@
 import { createTheme, createThemeContract } from '@vanilla-extract/css';
 
-const SYSTEM_FONT_STACK = `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`;
-
 export const colors = {
   black: '#383E3F', // typography heading color
   white: `#FFF`,
@@ -58,9 +55,6 @@ export const vars = createThemeContract({
     linkHover: ``,
     ...colors,
   },
-  font: {
-    body: ``,
-  },
   fontSize: {
     xs: ``,
     sm: ``,
@@ -75,11 +69,15 @@ export const vars = createThemeContract({
     bold: ``,
   },
   space: {
+    '2xs': ``,
     xs: ``,
     sm: ``,
     md: ``,
     lg: ``,
     xl: ``,
+    '2xl': ``,
+    '3xl': ``,
+    '4xl': ``,
   },
   boxShadow: {
     sm: ``,
@@ -94,15 +92,16 @@ export const vars = createThemeContract({
 });
 
 const commonVars = {
-  font: {
-    body: SYSTEM_FONT_STACK,
-  },
   space: {
-    xs: `0.25rem`, // 4px
-    sm: `0.5rem`, // 8px
-    md: `1rem`, // 16px
-    lg: `1.5rem`, // 24px
-    xl: `2.5rem`, // 40px
+    '2xs': '0.4rem', // 6px
+    xs: '0.5rem', // 8px
+    sm: '1rem', // 16px
+    md: '1.5rem', // 24px
+    lg: '2rem', // 32px
+    xl: '3rem', // 48px
+    '2xl': '4rem', // 64px
+    '3xl': '6rem', // 96px
+    '4xl': '8rem', // 128px
   },
   fontSize: {
     xs: `0.8rem`, // 12px
@@ -136,7 +135,7 @@ export const lightThemeClass = createTheme(vars, {
       light: colors.purple[100],
       main: colors.purple[500],
     },
-    body: colors.grey[700],
+    body: colors.blueGrey[500],
     heading: colors.black,
     caption: colors.blueGrey[100],
     background: colors.grey[50],
@@ -154,7 +153,7 @@ export const darkThemeClass = createTheme(vars, {
       lightest: colors.purple[50],
       light: colors.purple[100],
     },
-    body: colors.grey[700],
+    body: colors.blueGrey[500],
     heading: colors.black,
     caption: colors.blueGrey[100],
     background: colors.grey[800],
