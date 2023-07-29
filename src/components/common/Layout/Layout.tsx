@@ -14,7 +14,12 @@ export default function Layout({ children }: Props) {
   const schemeClass = scheme === 'dark' ? darkThemeClass : lightThemeClass;
 
   return (
-    <div className={clsx(schemeClass, styles.wrapper)}>
+    <div
+      style={{
+        fontFamily: 'Pretendard, sans-serif',
+      }}
+      className={clsx(schemeClass, styles.wrapper)}
+    >
       <main className={styles.innerWrapper}>{children}</main>
     </div>
   );
