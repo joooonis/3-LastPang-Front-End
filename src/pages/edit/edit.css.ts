@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { globalStyle, style } from '@vanilla-extract/css';
 
 import { theme } from '@/styles/theme.css';
 
@@ -54,13 +54,17 @@ export const card = style({
   marginBottom: theme.space.sm,
 });
 
-export const cardTitle = style({
+globalStyle(`${card}:last-child`, {
+  marginBottom: theme.space.lg,
+});
+
+globalStyle(`${card} h2`, {
   fontSize: theme.fontSize.lg,
   fontWeight: theme.fontWeights.bold,
   color: theme.colors.primary.main,
 });
 
-export const cardText = style({
+globalStyle(`${card} p`, {
   fontSize: theme.fontSize.xs,
   fontWeight: theme.fontWeights.regular,
   color: theme.colors.body,

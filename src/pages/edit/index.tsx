@@ -27,28 +27,20 @@ export default function Edit() {
 
         <div>
           <div className={styles.card}>
-            <p className={styles.cardText}>
-              직무별, 회사별로 만들어 링크로 간단히 첨부할래요
-            </p>
-            <h3 className={styles.cardTitle}>포트폴리오</h3>
+            <p>직무별, 회사별로 만들어 링크로 간단히 첨부할래요</p>
+            <h2>포트폴리오</h2>
           </div>
           <div className={styles.card}>
-            <p className={styles.cardText}>
-              직무별, 회사별로 만들어 링크로 간단히 첨부할래요
-            </p>
-            <h3 className={styles.cardTitle}>포트폴리오</h3>
+            <p>직무별, 회사별로 만들어 링크로 간단히 첨부할래요</p>
+            <h2>포트폴리오</h2>
           </div>
           <div className={styles.card}>
-            <p className={styles.cardText}>
-              직무별, 회사별로 만들어 링크로 간단히 첨부할래요
-            </p>
-            <h3 className={styles.cardTitle}>포트폴리오</h3>
+            <p>직무별, 회사별로 만들어 링크로 간단히 첨부할래요</p>
+            <h2>포트폴리오</h2>
           </div>
           <div className={styles.card}>
-            <p className={styles.cardText}>
-              직무별, 회사별로 만들어 링크로 간단히 첨부할래요
-            </p>
-            <h3 className={styles.cardTitle}>포트폴리오</h3>
+            <p>직무별, 회사별로 만들어 링크로 간단히 첨부할래요</p>
+            <h2>포트폴리오</h2>
           </div>
         </div>
       </div>
