@@ -85,6 +85,7 @@ export const theme = createThemeContract({
     lg: ``,
   },
   radii: {
+    xs: ``,
     sm: ``,
     md: ``,
     lg: ``,
@@ -123,7 +124,8 @@ const commonVars = {
     lg: `0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)`,
   },
   radii: {
-    sm: `0.25rem`, // 4px
+    xs: `0.25rem`, // 4px
+    sm: `0.5rem`, // 8px
     md: `1rem`, // 16px
     lg: `1.25rem`, // 20px
     full: `100%`,

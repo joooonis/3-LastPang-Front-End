@@ -20,7 +20,6 @@ export default function Edit() {
             제작하는 이유가 궁금해요.
           </h2>
         </div>
-
         <div>
           <div className={styles.card}>
             <p>직무별, 회사별로 만들어 링크로 간단히 첨부할래요</p>
