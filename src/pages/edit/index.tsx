@@ -1,8 +1,4 @@
-import clsx from 'clsx';
 import Image from 'next/image';
-
-import useColorScheme from '@/hooks/useColorScheme';
-import { darkThemeClass, lightThemeClass } from '@/styles/theme.css';
 
 import * as styles from './edit.css';
 

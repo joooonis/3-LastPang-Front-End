@@ -9,13 +9,14 @@
     "node": true
   },
   "extends": [
+    "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "airbnb",
-    "airbnb-typescript",
     "plugin:prettier/recommended",
     "next/core-web-vitals"
   ],
   "rules": {
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error",
     // 'React' must be in scope when using JSX 에러 해결 (Next.js)
     "react/react-in-jsx-scope": "off",
     // ts파일에서 tsx구문 허용 (Next.js)
