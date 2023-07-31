@@ -1,6 +1,6 @@
 import { clsx } from 'clsx';
 
-import Header from '@/components/login/Header/Header';
+import Header from '@/components/login/Header';
 
 import useColorScheme from '@/hooks/useColorScheme';
 import { darkThemeClass, lightThemeClass } from '@/styles/theme.css';
