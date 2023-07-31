@@ -1,4 +1,5 @@
 import Avatar from './Avatar';
+import ProfileAddBtn from './AddBtn';
 
 import { profileContainer } from './profile.css';
 
@@ -9,6 +10,7 @@ export default function Profile() {
       <Avatar featured name="Profile" />
       <Avatar name="Sue" />
       <Avatar name="Tom" />
+      <ProfileAddBtn />
     </div>
   );
 }

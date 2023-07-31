@@ -43,3 +43,10 @@ export const profileName = style({
 export const featuredName = style({
   color: theme.colors.primary.main,
 });
+
+export const profileAddBtn = style({
+  background: `none`,
+  border: `none`,
+  cursor: `pointer`,
+  padding: `12px 7px 32.79px`,
+});
