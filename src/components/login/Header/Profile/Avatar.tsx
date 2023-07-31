@@ -1,11 +1,25 @@
 import Image from 'next/image';
 
-import { profileWrapper, avatar, profileName } from './profile.css';
+import {
+  profileWrapper,
+  avatar,
+  profileName,
+  featuredAvatar,
+  featuredName,
+} from './profile.css';
 
-export default function Avatar() {
+interface Props {
+  featured?: boolean;
+  name: string;
+}
+
+export default function Avatar({ featured, name }: Props) {
+  const avatarClass = `${avatar} ${featured && featuredAvatar}`;
+  const nameClass = `${profileName} ${featured && featuredName}`;
+
   return (
     <div className={profileWrapper}>
-      <div className={avatar}>
+      <div className={avatarClass}>
         <Image
           src="/avatar_default.svg"
           alt="Profile Avatar"
@@ -13,7 +27,7 @@ export default function Avatar() {
           height={50}
         />
       </div>
-      <p className={profileName}>Profile</p>
+      <p className={nameClass}>{name}</p>
     </div>
   );
 }

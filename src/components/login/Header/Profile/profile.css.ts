@@ -7,7 +7,7 @@ export const profileContainer = style({
   width: `100%`,
   display: `flex`,
   alignItems: `center`,
-  gap: `0.5rem`,
+  gap: `0.2rem`,
   borderTop: `1px solid ${theme.colors.line}`,
   borderBottom: `1px solid ${theme.colors.line}`,
 });
@@ -27,12 +27,17 @@ export const avatar = style({
   height: `62px`,
   flexShrink: `0`,
   borderRadius: `50%`,
-  // TODO: 활성화 여부 추가
+});
+
+export const featuredAvatar = style({
   border: `3px solid ${theme.colors.primary.main}`,
 });
 
 export const profileName = style({
-  // TODO: 활성화 여부 추가
-  color: theme.colors.primary.main,
+  color: theme.colors.caption,
   fontSize: theme.fontSize.xs,
+});
+
+export const featuredName = style({
+  color: theme.colors.primary.main,
 });
