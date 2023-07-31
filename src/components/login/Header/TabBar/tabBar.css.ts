@@ -19,6 +19,7 @@ export const tabMenu = style({
   fontSize: theme.fontSize.sm,
   color: theme.colors.body,
   marginBottom: `4px`,
+  textDecorationLine: 'none',
 });
 
 export const featuredTab = style({

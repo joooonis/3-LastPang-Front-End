@@ -1,6 +1,13 @@
+import Link from 'next/link';
 import { featuredTab, tabBarContainer, tabMenu } from './tabBar.css';
 
-const tabs = ['기본정보', '테마', '링크', '분석', '설정'];
+const tabs = [
+  { menu: '기본정보', url: '/' },
+  { menu: '테마', url: '/' },
+  { menu: '링크', url: '/' },
+  { menu: '분석', url: '/' },
+  { menu: '설정', url: '/' },
+];
 
 export default function TabBar() {
   const tabClass = (tab: string) => {
@@ -12,9 +19,13 @@ export default function TabBar() {
   return (
     <nav className={tabBarContainer}>
       {tabs.map((tab) => (
-        <div className={tabClass(tab)} key={tab}>
-          {tab}
-        </div>
+        <Link
+          href={`/${tab.url}`}
+          className={tabClass(tab.menu)}
+          key={tab.menu}
+        >
+          {tab.menu}
+        </Link>
       ))}
     </nav>
   );
