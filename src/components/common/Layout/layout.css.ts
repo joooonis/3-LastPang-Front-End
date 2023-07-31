@@ -16,6 +16,7 @@ export const wrapper = style({
   maxWidth: breakpoints.mobile,
   minHeight: `100%`,
   border: `1px solid ${theme.colors.purple[500]}`,
+  margin: `0 auto`,
 });
 
 export const innerWrapper = style({

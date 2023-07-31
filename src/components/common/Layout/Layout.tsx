@@ -12,7 +12,7 @@ interface Props {
 }
 
 export default function Layout({ children }: Props) {
-  const { scheme, toggleScheme } = useColorScheme();
+  const { scheme } = useColorScheme();
   const schemeClass = scheme === 'dark' ? darkThemeClass : lightThemeClass;
 
   return (
