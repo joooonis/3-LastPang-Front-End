@@ -11,9 +11,10 @@ import {
 interface Props {
   featured?: boolean;
   name: string;
+  src?: string;
 }
 
-export default function Avatar({ featured, name }: Props) {
+export default function Avatar({ featured, name, src }: Props) {
   const avatarClass = `${avatar} ${featured && featuredAvatar}`;
   const nameClass = `${profileName} ${featured && featuredName}`;
 
@@ -21,7 +22,7 @@ export default function Avatar({ featured, name }: Props) {
     <div className={profileWrapper}>
       <div className={avatarClass}>
         <Image
-          src="/avatar_default.svg"
+          src={src || '/avatar_default.svg'}
           alt="Profile Avatar"
           width={50}
           height={50}
