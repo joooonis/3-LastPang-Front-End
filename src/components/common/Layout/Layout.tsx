@@ -1,5 +1,7 @@
 import { clsx } from 'clsx';
 
+import Header from '@/components/login/Header';
+
 import useColorScheme from '@/hooks/useColorScheme';
 import { darkThemeClass, lightThemeClass } from '@/styles/theme.css';
 
@@ -20,6 +22,7 @@ export default function Layout({ children }: Props) {
       }}
       className={clsx(schemeClass, styles.wrapper)}
     >
+      <Header />
       <main className={styles.innerWrapper}>{children}</main>
     </div>
   );
