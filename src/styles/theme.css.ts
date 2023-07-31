@@ -53,6 +53,7 @@ export const theme = createThemeContract({
     background: ``,
     link: ``,
     linkHover: ``,
+    line: ``,
     ...colors,
   },
   fontSize: {
@@ -145,6 +146,7 @@ export const lightThemeClass = createTheme(theme, {
     background: colors.grey[50],
     link: colors.purple[800],
     linkHover: colors.purple[500],
+    line: colors.grey[400],
     ...colors,
   },
   ...commonVars,
@@ -163,6 +165,7 @@ export const darkThemeClass = createTheme(theme, {
     background: colors.grey[800],
     link: colors.purple[100],
     linkHover: colors.purple[500],
+    line: colors.grey[600],
     ...colors,
   },
   ...commonVars,

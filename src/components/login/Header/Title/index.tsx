@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 import { preview, titleContainer, title, titleWrapper } from './title.css';
 
 export default function Title() {
