@@ -3,7 +3,7 @@ import { style } from '@vanilla-extract/css';
 import { theme } from '@/styles/theme.css';
 import { breakpoints } from '@/styles/theme.css';
 
-export const header = style({
+export const titleContainer = style({
   display: `flex`,
   alignItems: `center`,
   gap: `1rem`,

@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import { preview, header, title, titleWrapper } from './header.css';
+import { preview, titleContainer, title, titleWrapper } from './title.css';
 
-export default function Header() {
+export default function Title() {
   return (
-    <header className={header}>
+    <div className={titleContainer}>
       <Image
         src="/wity_color_text_logo.svg"
         alt="Wity Text Logo"
@@ -14,6 +14,6 @@ export default function Header() {
         <h1 className={title}>내 프로필 관리</h1>
         <p className={preview}>미리보기</p>
       </div>
-    </header>
+    </div>
   );
 }
