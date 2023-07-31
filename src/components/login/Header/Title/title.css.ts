@@ -7,6 +7,7 @@ export const titleContainer = style({
   alignItems: `center`,
   gap: `1rem`,
   height: `55px`,
+  padding: `0 10px`,
 });
 
 export const titleWrapper = style({

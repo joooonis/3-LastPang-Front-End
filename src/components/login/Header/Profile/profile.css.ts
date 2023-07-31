@@ -10,6 +10,8 @@ export const profileContainer = style({
   gap: `0.2rem`,
   borderTop: `1px solid ${theme.colors.line}`,
   borderBottom: `1px solid ${theme.colors.line}`,
+  paddingLeft: `15px`,
+  overflowX: `auto`,
 });
 
 export const profileWrapper = style({

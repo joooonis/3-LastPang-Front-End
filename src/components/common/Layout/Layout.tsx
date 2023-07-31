@@ -22,10 +22,8 @@ export default function Layout({ children }: Props) {
       }}
       className={clsx(schemeClass, styles.wrapper)}
     >
-      <main className={styles.innerWrapper}>
-        <Header />
-        {children}
-      </main>
+      <Header />
+      <main className={styles.innerWrapper}>{children}</main>
     </div>
   );
 }

@@ -10,12 +10,12 @@ export default function TabBar() {
   };
 
   return (
-    <div className={tabBarContainer}>
+    <nav className={tabBarContainer}>
       {tabs.map((tab) => (
         <div className={tabClass(tab)} key={tab}>
           {tab}
         </div>
       ))}
-    </div>
+    </nav>
   );
 }

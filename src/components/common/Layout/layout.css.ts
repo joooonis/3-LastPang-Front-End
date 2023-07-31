@@ -9,16 +9,18 @@ export const wrapper = style({
   height: `100vh`,
   width: `100%`,
   display: `flex`,
+  flexDirection: `column`,
   justifyContent: `center`,
   alignItems: `center`,
   fontSize: theme.fontSize.md,
+  maxWidth: breakpoints.mobile,
+  minHeight: `100%`,
+  border: `1px solid ${theme.colors.purple[500]}`,
 });
 
 export const innerWrapper = style({
-  maxWidth: breakpoints.mobile,
   width: `100%`,
-  minHeight: `100%`,
+  height: `100%`,
   padding: theme.space.md,
   paddingTop: theme.space.lg,
-  border: `1px solid ${theme.colors.purple[500]}`,
 });
