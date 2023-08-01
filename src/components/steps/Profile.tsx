@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import * as styles from './steps.css';
+import Button from '../common/Button';
 
 export default function Profile() {
   return (
@@ -21,6 +22,24 @@ export default function Profile() {
             alt="avatar"
           />
         </div>
+      </div>
+      <div
+        style={{
+          margin: '40px 16px 0 16px',
+        }}
+      >
+        <Button variant="outline">
+          <Image
+            style={{
+              marginRight: 8,
+            }}
+            src="/upload.svg"
+            width={24}
+            height={24}
+            alt="upload"
+          />
+          사진 찾아보기
+        </Button>
       </div>
     </div>
   );

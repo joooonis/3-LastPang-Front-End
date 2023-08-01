@@ -70,6 +70,7 @@ globalStyle(`${card}:hover p`, {
 
 export const avatarContainer = style({
   margin: `0 auto`,
+  marginTop: 40,
   display: `flex`,
   justifyContent: `center`,
   alignItems: `center`,
