@@ -12,6 +12,7 @@ import {
 } from '@/components/steps';
 import { useState } from 'react';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
+import Button from '@/components/common/Button';
 
 const STEPS = [
   'purpose',
@@ -33,7 +34,13 @@ type Step =
   | 'sns';
 
 const Guide: NextPageWithLayout = () => {
-  const [steps, setSteps] = useState<Step>('sns');
+  const [steps, setSteps] = useState<Step>('purpose');
+  const handleButtonClick = () => {
+    const index = STEPS.indexOf(steps);
+    console.log(index);
+    if (index === STEPS.length - 1) return;
+    setSteps(STEPS[index + 1]);
+  };
 
   return (
     <div>
@@ -59,6 +66,9 @@ const Guide: NextPageWithLayout = () => {
         {steps === 'portfolio' && <Portfolio />}
         {steps === 'contact' && <Contact />}
         {steps === 'sns' && <Sns />}
+      </div>
+      <div>
+        <Button onClick={handleButtonClick}>다음</Button>
       </div>
     </div>
   );
