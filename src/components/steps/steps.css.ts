@@ -1,0 +1,56 @@
+import { globalStyle, style } from '@vanilla-extract/css';
+
+import { theme } from '@/styles/theme.css';
+
+export const heading = style({
+  fontSize: theme.fontSize.xl,
+  fontWeight: theme.fontWeights.bold,
+  color: theme.colors.heading,
+  marginLeft: theme.space.xs,
+  marginBottom: theme.space.lg,
+});
+
+export const caption = style({
+  fontSize: theme.fontSize.sm,
+  fontWeight: theme.fontWeights.regular,
+  color: theme.colors.primary.main,
+  marginLeft: theme.space.xs,
+});
+
+export const cardWrapper = style({
+  display: `flex`,
+  flexDirection: `column`,
+  justifyContent: `space-between`,
+  alignItems: `left`,
+  padding: theme.space.sm,
+  marginTop: theme.space.md,
+  borderRadius: theme.radii.lg,
+  boxShadow: theme.boxShadow.md,
+});
+
+export const card = style({
+  display: `flex`,
+  flexDirection: `column`,
+  justifyContent: `space-between`,
+  alignItems: `left`,
+  padding: theme.space.md,
+  borderRadius: theme.radii.lg,
+  border: `1px solid ${theme.colors.primary.main}`,
+  marginBottom: theme.space.sm,
+});
+
+globalStyle(`${card}:last-child`, {
+  marginBottom: theme.space.lg,
+});
+
+globalStyle(`${card} h2`, {
+  fontSize: theme.fontSize.lg,
+  fontWeight: theme.fontWeights.bold,
+  color: theme.colors.primary.main,
+});
+
+globalStyle(`${card} p`, {
+  fontSize: theme.fontSize.xs,
+  fontWeight: theme.fontWeights.regular,
+  color: theme.colors.body,
+});
