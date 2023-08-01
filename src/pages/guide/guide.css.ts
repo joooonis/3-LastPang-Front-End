@@ -2,6 +2,21 @@ import { createVar, globalStyle, style } from '@vanilla-extract/css';
 
 import { theme } from '@/styles/theme.css';
 
+export const header = style({
+  display: `flex`,
+  justifyContent: `space-between`,
+  alignItems: `center`,
+  width: `100%`,
+  height: 24,
+});
+
+export const hover = style({
+  ':hover': {
+    cursor: `pointer`,
+    opacity: 0.9,
+  },
+});
+
 export const progressBar = style({
   position: `relative`,
   width: `100%`,
