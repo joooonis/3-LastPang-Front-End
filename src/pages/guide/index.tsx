@@ -11,6 +11,17 @@ import {
   Introduce,
 } from '@/components/steps';
 import { useState } from 'react';
+import { assignInlineVars } from '@vanilla-extract/dynamic';
+
+const STEPS = [
+  'purpose',
+  'profile',
+  'nickname',
+  'introduce',
+  'portfolio',
+  'contact',
+  'sns',
+] as const;
 
 type Step =
   | 'purpose'
@@ -22,13 +33,23 @@ type Step =
   | 'sns';
 
 const Guide: NextPageWithLayout = () => {
-  const [steps, setSteps] = useState<Step>('introduce');
+  const [steps, setSteps] = useState<Step>('sns');
 
   return (
     <div>
       <div>
-        <div className={styles.progressText}>1/9</div>
-        <div className={styles.progressBar} />
+        <div className={styles.progressText}>
+          {STEPS.indexOf(steps) + 1 + '/' + 7}
+        </div>
+        <div className={styles.progressBar}>
+          <div
+            className={styles.progress}
+            style={assignInlineVars({
+              [styles.progressStep]:
+                ((STEPS.indexOf(steps) + 1) / STEPS.length) * 100 + '%',
+            })}
+          />
+        </div>
       </div>
       <div>
         {steps === 'purpose' && <PurPose />}

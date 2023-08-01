@@ -65,11 +65,9 @@ export const avatarContainer = style({
   borderRadius: theme.radii.full,
   backgroundColor: theme.colors.grey[200],
   border: `1px dashed ${theme.colors.grey[800]}`,
-  selectors: {
-    '&:hover': {
-      border: `1px dashed ${theme.colors.primary.main}`,
-      cursor: `pointer`,
-    },
+  ':hover': {
+    border: `1px dashed ${theme.colors.primary.main}`,
+    cursor: `pointer`,
   },
 });
 

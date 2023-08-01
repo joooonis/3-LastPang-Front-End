@@ -1,12 +1,23 @@
-import { globalStyle, style } from '@vanilla-extract/css';
+import { createVar, globalStyle, style } from '@vanilla-extract/css';
 
 import { theme } from '@/styles/theme.css';
 
 export const progressBar = style({
+  position: `relative`,
   width: `100%`,
   height: theme.space['2xs'],
   backgroundColor: theme.colors.grey[200],
   borderRadius: theme.radii.sm,
+});
+
+export const progressStep = createVar();
+
+export const progress = style({
+  position: `absolute`,
+  width: progressStep,
+  height: theme.space['2xs'],
+  borderRadius: theme.radii.sm,
+  backgroundColor: theme.colors.primary.main,
 });
 
 export const progressText = style({
