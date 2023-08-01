@@ -1,6 +1,8 @@
 import Head from 'next/head';
+import { NextPageWithLayout } from './_app';
+import Layout from '@/components/common/Layout';
 
-export default function Home() {
+const Home: NextPageWithLayout = () => {
   return (
     <>
       <Head>
@@ -12,4 +14,10 @@ export default function Home() {
       <main>하이</main>
     </>
   );
-}
+};
+
+Home.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
+
+export default Home;

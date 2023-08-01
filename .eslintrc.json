@@ -15,6 +15,7 @@
     "next/core-web-vitals"
   ],
   "rules": {
+    "@typescript-eslint/ban-types": "off",
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "error",
     // 'React' must be in scope when using JSX 에러 해결 (Next.js)

@@ -8,10 +8,11 @@ import { darkThemeClass, lightThemeClass } from '@/styles/theme.css';
 import * as styles from './layout.css';
 
 interface Props {
+  isHeader?: boolean;
   children: React.ReactNode;
 }
 
-export default function Layout({ children }: Props) {
+export default function Layout({ isHeader = true, children }: Props) {
   const { scheme } = useColorScheme();
   const schemeClass = scheme === 'dark' ? darkThemeClass : lightThemeClass;
 
@@ -22,7 +23,7 @@ export default function Layout({ children }: Props) {
       }}
       className={clsx(schemeClass, styles.wrapper)}
     >
-      <Header />
+      {isHeader && <Header />}
       <main className={styles.innerWrapper}>{children}</main>
     </div>
   );

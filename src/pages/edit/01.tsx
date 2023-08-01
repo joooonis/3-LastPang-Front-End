@@ -1,8 +1,10 @@
 import Image from 'next/image';
 
 import * as styles from './edit.css';
+import Layout from '@/components/common/Layout';
+import { NextPageWithLayout } from '../_app';
 
-export default function Edit() {
+const Edit: NextPageWithLayout = () => {
   return (
     <div>
       <header>
@@ -41,4 +43,10 @@ export default function Edit() {
       </div>
     </div>
   );
-}
+};
+
+Edit.getLayout = function getLayout(page) {
+  return <Layout isHeader={false}>{page}</Layout>;
+};
+
+export default Edit;
