@@ -1,4 +1,3 @@
-import Input from '@/components/common/Input';
 import * as styles from './steps.css';
 
 export default function Contact() {

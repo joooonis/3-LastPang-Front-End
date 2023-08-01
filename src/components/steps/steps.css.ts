@@ -37,6 +37,11 @@ export const card = style({
   borderRadius: theme.radii.lg,
   border: `1px solid ${theme.colors.primary.main}`,
   marginBottom: theme.space.sm,
+  transition: `all 0.1s ease-in-out`,
+  ':hover': {
+    backgroundColor: theme.colors.primary.main,
+    cursor: `pointer`,
+  },
 });
 
 globalStyle(`${card}:last-child`, {
@@ -49,10 +54,18 @@ globalStyle(`${card} h2`, {
   color: theme.colors.primary.main,
 });
 
+globalStyle(`${card}:hover h2`, {
+  color: theme.colors.white,
+});
+
 globalStyle(`${card} p`, {
   fontSize: theme.fontSize.xs,
   fontWeight: theme.fontWeights.regular,
   color: theme.colors.body,
+});
+
+globalStyle(`${card}:hover p`, {
+  color: theme.colors.grey[300],
 });
 
 export const avatarContainer = style({

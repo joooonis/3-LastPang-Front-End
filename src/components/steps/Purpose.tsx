@@ -1,5 +1,24 @@
 import * as styles from './steps.css';
 
+const CARDS = [
+  {
+    title: '포트폴리오',
+    description: '직무별, 회사별로 만들어 링크로 간단히 첨부할래요',
+  },
+  {
+    title: '개인 사업',
+    description: '제 마켓을 인스타그램, 블로그 등에 첨부할거에요',
+  },
+  {
+    title: '펫 프로필',
+    description: '우리집 귀요미 사진 모음집을 만들거에요',
+  },
+  {
+    title: '콘텐츠 홍보',
+    description: '유튜브, 틱톡 등 저만의 콘텐츠 링크예요!',
+  },
+];
+
 export default function Purpose() {
   return (
     <div className={styles.cardWrapper}>
@@ -11,23 +30,24 @@ export default function Purpose() {
         </h2>
       </div>
       <div>
-        <div className={styles.card}>
-          <p>직무별, 회사별로 만들어 링크로 간단히 첨부할래요</p>
-          <h2>포트폴리오</h2>
-        </div>
-        <div className={styles.card}>
-          <p>직무별, 회사별로 만들어 링크로 간단히 첨부할래요</p>
-          <h2>포트폴리오</h2>
-        </div>
-        <div className={styles.card}>
-          <p>직무별, 회사별로 만들어 링크로 간단히 첨부할래요</p>
-          <h2>포트폴리오</h2>
-        </div>
-        <div className={styles.card}>
-          <p>직무별, 회사별로 만들어 링크로 간단히 첨부할래요</p>
-          <h2>포트폴리오</h2>
-        </div>
+        {CARDS.map((card) => (
+          <Card key={card.title} {...card} />
+        ))}
       </div>
     </div>
   );
 }
+
+interface CardProps {
+  title: string;
+  description: string;
+}
+
+const Card = ({ title, description }: CardProps) => {
+  return (
+    <div className={styles.card}>
+      <p>{description}</p>
+      <h2>{title}</h2>
+    </div>
+  );
+};
