@@ -22,7 +22,7 @@ export const cardWrapper = style({
   minHeight: 528,
   flexDirection: `column`,
   alignItems: `left`,
-  padding: theme.space.sm,
+  padding: 24,
   marginTop: theme.space.md,
   borderRadius: theme.radii.lg,
   boxShadow: theme.boxShadow.md,
@@ -85,4 +85,34 @@ export const avatarContainer = style({
   },
 });
 
-export const avatarImage = style({});
+export const flex = style({
+  display: `flex`,
+  justifyContent: `space-between`,
+  alignItems: `center`,
+});
+
+export const label = style({
+  display: `flex`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  width: 38,
+  height: 38,
+  marginRight: theme.space.xs,
+  backgroundColor: theme.colors.grey[100],
+  borderRadius: theme.radii.sm,
+});
+
+export const snsLabel = style({
+  display: `flex`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  marginBottom: 8,
+});
+
+export const marginTop = style({
+  marginTop: 8,
+});
+
+globalStyle(`${snsLabel} span`, {
+  marginLeft: 5,
+});

@@ -1,5 +1,7 @@
 import Input from '@/components/common/Input';
 import * as styles from './steps.css';
+import Image from 'next/image';
+import Button from '../common/Button';
 
 export default function Portfolio() {
   return (
@@ -11,8 +13,48 @@ export default function Portfolio() {
           입력해주세요.
         </h2>
       </div>
-      <div>
-        <Input type="text" placeholder="한줄로 나를 표현하기." />
+      <div className={styles.flex}>
+        <label htmlFor="portfolio" className={styles.label}>
+          <Image
+            src="/icons/image.svg"
+            width={20}
+            height={24}
+            alt="portfolio"
+          />
+        </label>
+        <Input
+          id="portfolio"
+          name="portfolio"
+          type="text"
+          placeholder="링크 제목을 입력해주세요."
+        />
+      </div>
+      <div
+        style={{
+          width: `100%`,
+          height: 8,
+        }}
+      />
+      <div className={styles.flex}>
+        <Input type="text" placeholder="http://example.com" />
+      </div>
+      <div
+        style={{
+          marginTop: 40,
+        }}
+      >
+        <Button variant="outline">
+          <Image
+            style={{
+              marginRight: 8,
+            }}
+            src="/icons/plus.svg"
+            width={24}
+            height={24}
+            alt="upload"
+          />
+          링크 추가하기
+        </Button>
       </div>
     </div>
   );

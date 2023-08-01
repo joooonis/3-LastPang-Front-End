@@ -14,18 +14,12 @@ export default function Profile() {
       </div>
       <div>
         <div className={styles.avatarContainer}>
-          <Image
-            className={styles.avatarImage}
-            src="/user.svg"
-            width={60}
-            height={60}
-            alt="avatar"
-          />
+          <Image src="/user.svg" width={60} height={60} alt="avatar" />
         </div>
       </div>
       <div
         style={{
-          margin: '40px 16px 0 16px',
+          marginTop: 40,
         }}
       >
         <Button variant="outline">

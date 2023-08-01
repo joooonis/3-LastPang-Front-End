@@ -1,16 +1,16 @@
 import * as styles from './input.css';
 
-interface Props {
+interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   type: string;
   placeholder: string;
-  isLabel?: boolean;
+  [key: string]: any;
 }
 
-export default function Input({ type, placeholder, isLabel = false }: Props) {
+export default function Input({ type, placeholder, ...rest }: Props) {
   return (
     <div className={styles.wrapper}>
-      {isLabel && <label>닉네임</label>}
       <input
+        {...rest}
         className={styles.input}
         onFocus={(e) => {
           e.target.placeholder = '';
