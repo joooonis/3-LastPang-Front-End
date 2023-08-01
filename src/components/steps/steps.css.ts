@@ -19,8 +19,8 @@ export const caption = style({
 
 export const cardWrapper = style({
   display: `flex`,
+  minHeight: 528,
   flexDirection: `column`,
-  justifyContent: `space-between`,
   alignItems: `left`,
   padding: theme.space.sm,
   marginTop: theme.space.md,
@@ -54,3 +54,23 @@ globalStyle(`${card} p`, {
   fontWeight: theme.fontWeights.regular,
   color: theme.colors.body,
 });
+
+export const avatarContainer = style({
+  margin: `0 auto`,
+  display: `flex`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  width: 162,
+  height: 162,
+  borderRadius: theme.radii.full,
+  backgroundColor: theme.colors.grey[200],
+  border: `1px dashed ${theme.colors.grey[800]}`,
+  selectors: {
+    '&:hover': {
+      border: `1px dashed ${theme.colors.primary.main}`,
+      cursor: `pointer`,
+    },
+  },
+});
+
+export const avatarImage = style({});
