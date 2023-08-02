@@ -1,3 +1,4 @@
+import { error } from './../components/steps/steps.css';
 import { createTheme, createThemeContract } from '@vanilla-extract/css';
 
 export const colors = {
@@ -32,6 +33,9 @@ export const colors = {
     800: `#1B1273`,
     900: `#0E0939`,
   },
+  red: {
+    500: `#ef5350`,
+  },
 };
 
 export const breakpoints = {
@@ -47,6 +51,7 @@ export const theme = createThemeContract({
       light: ``,
       main: ``,
     },
+    error: ``,
     heading: ``,
     body: ``,
     caption: ``,
@@ -147,6 +152,7 @@ export const lightThemeClass = createTheme(theme, {
     link: colors.purple[800],
     linkHover: colors.purple[500],
     line: colors.grey[300],
+    error: colors.red[500],
     ...colors,
   },
   ...commonVars,
@@ -166,6 +172,7 @@ export const darkThemeClass = createTheme(theme, {
     link: colors.purple[100],
     linkHover: colors.purple[500],
     line: colors.grey[700],
+    error: colors.red[500],
     ...colors,
   },
   ...commonVars,

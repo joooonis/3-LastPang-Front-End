@@ -14,6 +14,8 @@ import { useState } from 'react';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import Button from '@/components/common/Button';
 import Image from 'next/image';
+import { useForm } from 'react-hook-form';
+import { IFormValues } from '@/types/form';
 
 const STEPS = [
   'purpose',
@@ -41,16 +43,24 @@ const Guide: NextPageWithLayout = () => {
     if (index === STEPS.length - 1) return;
     setSteps(STEPS[index + 1]);
   };
-
   const prevStep = () => {
     const index = STEPS.indexOf(steps);
     if (index === 0) return;
     setSteps(STEPS[index - 1]);
   };
 
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<IFormValues>();
+
+  const onSubmit = (data: IFormValues) => console.log(data);
+
   return (
-    <div>
-      <div className={styles.header}>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <nav className={styles.header}>
         <div className={styles.hover} onClick={prevStep}>
           <Image src="/arrow_left.svg" width={24} height={24} alt="back" />
         </div>
@@ -63,7 +73,7 @@ const Guide: NextPageWithLayout = () => {
             height: '24px',
           }}
         />
-      </div>
+      </nav>
       <div>
         <div className={styles.progressText}>
           {STEPS.indexOf(steps) + 1 + '/' + 7}
@@ -81,8 +91,8 @@ const Guide: NextPageWithLayout = () => {
       <div>
         {steps === 'purpose' && <PurPose />}
         {steps === 'profile' && <Profile />}
-        {steps === 'nickname' && <Nickname />}
-        {steps === 'introduce' && <Introduce />}
+        {steps === 'nickname' && <Nickname register={register} />}
+        {steps === 'introduce' && <Introduce register={register} />}
         {steps === 'portfolio' && <Portfolio />}
         {steps === 'contact' && <Contact />}
         {steps === 'sns' && <Sns />}
@@ -94,7 +104,7 @@ const Guide: NextPageWithLayout = () => {
       >
         <Button onClick={nextStep}>다음</Button>
       </div>
-    </div>
+    </form>
   );
 };
 

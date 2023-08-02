@@ -116,3 +116,11 @@ export const marginTop = style({
 globalStyle(`${snsLabel} span`, {
   marginLeft: 5,
 });
+
+export const error = style({
+  fontSize: theme.fontSize.xs,
+  fontWeight: theme.fontWeights.regular,
+  color: theme.colors.error,
+  marginTop: theme.space.xs,
+  marginLeft: theme.space.xs,
+});

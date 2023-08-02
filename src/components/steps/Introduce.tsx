@@ -1,7 +1,10 @@
 import Input from '@/components/common/Input';
 import * as styles from './steps.css';
+import { InputProps } from '@/types/form';
 
-export default function Introduce() {
+interface Props extends InputProps {}
+
+export default function Introduce({ register }: Props) {
   return (
     <div className={styles.cardWrapper}>
       <div>
@@ -12,7 +15,11 @@ export default function Introduce() {
         </h2>
       </div>
       <div>
-        <Input type="text" placeholder="한줄로 나를 표현하기." />
+        <Input
+          {...register('introduce')}
+          type="text"
+          placeholder="한줄로 나를 표현하기."
+        />
       </div>
     </div>
   );

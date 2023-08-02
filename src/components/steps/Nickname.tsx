@@ -1,7 +1,10 @@
 import Input from '@/components/common/Input';
 import * as styles from './steps.css';
+import { InputProps } from '@/types/form';
 
-export default function Nickname() {
+interface Props extends InputProps {}
+
+export default function Nickname({ register }: Props) {
   return (
     <div className={styles.cardWrapper}>
       <div>
@@ -12,7 +15,11 @@ export default function Nickname() {
         </h2>
       </div>
       <div>
-        <Input type="text" placeholder="닉네임을 적어주세요." />
+        <Input
+          {...register('nickname')}
+          type="text"
+          placeholder="닉네임을 적어주세요."
+        />
       </div>
     </div>
   );
