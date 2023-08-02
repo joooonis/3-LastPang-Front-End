@@ -1,4 +1,4 @@
-import { UseFormRegister, FieldErrors } from 'react-hook-form';
+import { UseFormRegister } from 'react-hook-form';
 
 export interface IFormValues {
   purpose: string;
@@ -12,4 +12,6 @@ export interface IFormValues {
 
 export interface InputProps {
   register: UseFormRegister<IFormValues>;
+  watch?: (name: keyof IFormValues) => string;
+  setValue?: (name: keyof IFormValues, value: string) => void;
 }

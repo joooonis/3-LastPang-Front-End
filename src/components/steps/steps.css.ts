@@ -44,8 +44,17 @@ export const card = style({
   },
 });
 
-globalStyle(`${card}:last-child`, {
-  marginBottom: theme.space.lg,
+export const purpose = style({
+  display: `flex`,
+  flexDirection: `column`,
+  justifyContent: `space-between`,
+  alignItems: `left`,
+  padding: theme.space.md,
+  borderRadius: theme.radii.lg,
+  border: `1px solid ${theme.colors.primary.main}`,
+  marginBottom: theme.space.sm,
+  transition: `all 0.1s ease-in-out`,
+  backgroundColor: theme.colors.primary.main,
 });
 
 globalStyle(`${card} h2`, {
@@ -65,6 +74,18 @@ globalStyle(`${card} p`, {
 });
 
 globalStyle(`${card}:hover p`, {
+  color: theme.colors.grey[300],
+});
+
+globalStyle(`${purpose} h2`, {
+  fontSize: theme.fontSize.lg,
+  fontWeight: theme.fontWeights.bold,
+  color: theme.colors.white,
+});
+
+globalStyle(`${purpose} p`, {
+  fontSize: theme.fontSize.xs,
+  fontWeight: theme.fontWeights.regular,
   color: theme.colors.grey[300],
 });
 
@@ -123,4 +144,18 @@ export const error = style({
   color: theme.colors.error,
   marginTop: theme.space.xs,
   marginLeft: theme.space.xs,
+});
+
+export const selectReset = style({
+  appearance: `none`,
+  border: `none`,
+  backgroundColor: `transparent`,
+  padding: 0,
+  margin: 0,
+  width: `100%`,
+  fontSize: theme.fontSize.md,
+
+  ':focus': {
+    outline: `none`,
+  },
 });

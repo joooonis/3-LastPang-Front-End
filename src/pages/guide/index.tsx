@@ -52,6 +52,7 @@ const Guide: NextPageWithLayout = () => {
   const {
     register,
     handleSubmit,
+    setValue,
     watch,
     formState: { errors },
   } = useForm<IFormValues>();
@@ -89,7 +90,9 @@ const Guide: NextPageWithLayout = () => {
         </div>
       </div>
       <div>
-        {steps === 'purpose' && <PurPose />}
+        {steps === 'purpose' && (
+          <PurPose register={register} setValue={setValue} watch={watch} />
+        )}
         {steps === 'profile' && <Profile />}
         {steps === 'nickname' && <Nickname register={register} />}
         {steps === 'introduce' && <Introduce register={register} />}

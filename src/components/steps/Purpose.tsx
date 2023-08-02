@@ -1,3 +1,4 @@
+import { InputProps } from '@/types/form';
 import * as styles from './steps.css';
 
 const CARDS = [
@@ -19,7 +20,16 @@ const CARDS = [
   },
 ];
 
-export default function Purpose() {
+interface Props extends InputProps {}
+
+export default function Purpose({ setValue, watch }: Props) {
+  const handleClick = (purpose: string) => {
+    if (!setValue) return;
+    setValue('purpose', purpose);
+  };
+
+  const purpose = watch && watch('purpose');
+
   return (
     <div className={styles.cardWrapper}>
       <div>
@@ -31,7 +41,12 @@ export default function Purpose() {
       </div>
       <div>
         {CARDS.map((card) => (
-          <Card key={card.title} {...card} />
+          <Card
+            purpose={purpose}
+            key={card.title}
+            onClick={handleClick}
+            {...card}
+          />
         ))}
       </div>
     </div>
@@ -40,12 +55,17 @@ export default function Purpose() {
 
 interface CardProps {
   title: string;
+  purpose: string | undefined;
   description: string;
+  onClick: (purpose: string) => void;
 }
 
-const Card = ({ title, description }: CardProps) => {
+const Card = ({ title, purpose, description, onClick }: CardProps) => {
   return (
-    <div className={styles.card}>
+    <div
+      className={purpose === title ? styles.purpose : styles.card}
+      onClick={() => onClick(title)}
+    >
       <p>{description}</p>
       <h2>{title}</h2>
     </div>
