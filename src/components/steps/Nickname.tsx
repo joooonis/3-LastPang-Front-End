@@ -1,8 +1,8 @@
 import Input from '@/components/common/Input';
 import * as styles from './steps.css';
-import { InputProps } from '@/types/form';
+import { IFormProps } from '@/types/form';
 
-interface Props extends InputProps {}
+interface Props extends IFormProps {}
 
 export default function Nickname({ register }: Props) {
   return (
@@ -16,7 +16,8 @@ export default function Nickname({ register }: Props) {
       </div>
       <div>
         <Input
-          {...register('nickname')}
+          label="nickname"
+          register={register}
           type="text"
           placeholder="닉네임을 적어주세요."
         />

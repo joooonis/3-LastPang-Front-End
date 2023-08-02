@@ -1,16 +1,25 @@
 import * as styles from './input.css';
+import { IFormProps } from '@/types/form';
 
-interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+type InputProps = IFormProps & React.InputHTMLAttributes<HTMLInputElement>;
+interface Props extends InputProps {
   type: string;
   placeholder: string;
+
   [key: string]: any;
 }
-
-export default function Input({ type, placeholder, ...rest }: Props) {
+export default function Input({
+  type,
+  label,
+  placeholder,
+  register,
+  ...rest
+}: Props) {
   return (
     <div className={styles.wrapper}>
       <input
         {...rest}
+        {...register(label)}
         className={styles.input}
         onFocus={(e) => {
           e.target.placeholder = '';
