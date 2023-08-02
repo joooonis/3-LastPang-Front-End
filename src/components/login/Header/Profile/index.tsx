@@ -1,6 +1,5 @@
-import Avatar from './Avatar';
 import ProfileAddBtn from './AddBtn';
-
+import Avatar from './Avatar';
 import { profileContainer } from './profile.css';
 
 export default function Profile() {

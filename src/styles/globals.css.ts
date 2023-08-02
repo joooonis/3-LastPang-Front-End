@@ -12,6 +12,7 @@ globalStyle(`html, body`, {
 globalStyle(`body`, {
   lineHeight: 1.5,
   WebkitFontSmoothing: `antialiased`,
+  backgroundColor: `#F4F2FD`,
 });
 
 globalStyle(`img, picture, video, canvas, svg`, {

@@ -15,7 +15,6 @@ export const wrapper = style({
   fontSize: theme.fontSize.md,
   maxWidth: breakpoints.mobile,
   minHeight: `100%`,
-  border: `1px solid ${theme.colors.purple[500]}`,
   margin: `0 auto`,
 });
 

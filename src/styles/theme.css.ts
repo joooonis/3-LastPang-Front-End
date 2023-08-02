@@ -1,5 +1,6 @@
-import { error } from './../components/steps/steps.css';
 import { createTheme, createThemeContract } from '@vanilla-extract/css';
+
+import { error } from './../components/steps/steps.css';
 
 export const colors = {
   black: '#383E3F', // typography heading color
