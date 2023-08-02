@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import { useForm } from 'react-hook-form';
 import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 import Button from '@/components/common/Button';
 import Layout from '@/components/common/Layout';
@@ -16,6 +17,7 @@ import {
   Sns,
 } from '@/components/steps';
 import { IFormValues } from '@/types/form';
+import { useProfileStore } from '@/components/features/profileStore';
 
 import * as styles from './guide.css';
 import { NextPageWithLayout } from '../_app';
@@ -53,19 +55,19 @@ const Guide: NextPageWithLayout = () => {
     setSteps(STEPS[index - 1]);
   };
 
-  const {
-    register,
-    handleSubmit,
-    setValue,
-    watch,
-    formState: { errors },
-  } = useForm<IFormValues>();
+  const { register, handleSubmit, setValue, watch } = useForm<IFormValues>();
 
-  const onSubmit = (data: IFormValues) => {
-    console.log(data);
-  };
+  const addProfile = useProfileStore((state) => state.addProfile);
+  const router = useRouter();
 
   const watchAllFields = watch();
+
+  const onSubmit = (data: IFormValues) => {
+    if (steps !== 'sns') return;
+    if (data.instagram === undefined) return;
+    addProfile(data);
+    router.push('/');
+  };
 
   useEffect(() => {
     if (watchAllFields) {
