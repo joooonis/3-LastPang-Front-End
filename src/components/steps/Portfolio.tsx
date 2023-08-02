@@ -1,8 +1,10 @@
-import Input from '@/components/common/Input';
-import * as styles from './steps.css';
 import Image from 'next/image';
-import Button from '../common/Button';
+
+import Input from '@/components/common/Input';
 import { IFormProps } from '@/types/form';
+
+import * as styles from './steps.css';
+import Button from '../common/Button';
 
 interface Props extends IFormProps {}
 
@@ -17,7 +19,7 @@ export default function Portfolio({ register }: Props) {
         </h2>
       </div>
       <div className={styles.flex}>
-        <label htmlFor="portfolio" className={styles.label}>
+        <label htmlFor="portfolioTitle" className={styles.label}>
           <Image
             src="/icons/image.svg"
             width={20}
@@ -42,7 +44,7 @@ export default function Portfolio({ register }: Props) {
       />
       <div className={styles.flex}>
         <Input
-          label="PortfolioLink"
+          label="portfolioLink"
           register={register}
           type="text"
           placeholder="http://example.com"

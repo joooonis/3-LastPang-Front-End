@@ -1,21 +1,24 @@
-import Layout from '@/components/common/Layout';
-import * as styles from './guide.css';
-import { NextPageWithLayout } from '../_app';
-import {
-  Profile,
-  Nickname,
-  PurPose,
-  Portfolio,
-  Contact,
-  Sns,
-  Introduce,
-} from '@/components/steps';
+import Image from 'next/image';
 import { useState } from 'react';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
-import Button from '@/components/common/Button';
-import Image from 'next/image';
 import { useForm } from 'react-hook-form';
+import { useEffect } from 'react';
+
+import Button from '@/components/common/Button';
+import Layout from '@/components/common/Layout';
+import {
+  Contact,
+  Introduce,
+  Nickname,
+  Portfolio,
+  Profile,
+  PurPose,
+  Sns,
+} from '@/components/steps';
 import { IFormValues } from '@/types/form';
+
+import * as styles from './guide.css';
+import { NextPageWithLayout } from '../_app';
 
 const STEPS = [
   'purpose',
@@ -38,6 +41,7 @@ type Step =
 
 const Guide: NextPageWithLayout = () => {
   const [steps, setSteps] = useState<Step>('purpose');
+  const [nextDisabled, setNextDisabled] = useState(false);
   const nextStep = () => {
     const index = STEPS.indexOf(steps);
     if (index === STEPS.length - 1) return;
@@ -60,6 +64,54 @@ const Guide: NextPageWithLayout = () => {
   const onSubmit = (data: IFormValues) => {
     console.log(data);
   };
+
+  const watchAllFields = watch();
+
+  useEffect(() => {
+    if (watchAllFields) {
+      if (steps === 'profile') {
+        // profile is a FileList is empty
+        setNextDisabled(watchAllFields[steps]?.length === 0);
+        return;
+      }
+
+      if (steps === 'portfolio') {
+        setNextDisabled(
+          watchAllFields['portfolioLink'] === undefined ||
+            watchAllFields['portfolioLink'] === '' ||
+            watchAllFields['portfolioTitle'] === undefined ||
+            watchAllFields['portfolioTitle'] === '',
+        );
+        return;
+      }
+
+      if (steps === 'contact') {
+        setNextDisabled(
+          watchAllFields['email'] === undefined ||
+            watchAllFields['email'] === '' ||
+            watchAllFields['phone'] === undefined ||
+            watchAllFields['phone'] === '',
+        );
+        return;
+      }
+
+      if (steps === 'sns') {
+        setNextDisabled(
+          !watchAllFields['instagram'] &&
+            !watchAllFields['youtube'] &&
+            !watchAllFields['blog'] &&
+            !watchAllFields['twitter'] &&
+            !watchAllFields['facebook'],
+        );
+
+        return;
+      }
+
+      setNextDisabled(
+        watchAllFields[steps] === undefined || watchAllFields[steps] === '',
+      );
+    }
+  }, [watchAllFields, steps]);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -107,7 +159,9 @@ const Guide: NextPageWithLayout = () => {
           marginTop: '44px',
         }}
       >
-        <Button onClick={nextStep}>다음</Button>
+        <Button disabled={nextDisabled} onClick={nextStep}>
+          다음
+        </Button>
       </div>
     </form>
   );

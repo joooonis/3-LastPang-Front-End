@@ -7,8 +7,13 @@ export interface IFormValues {
   introduce: string;
   portfolioTitle: string;
   portfolioLink: string;
-  contact: string;
-  sns: string;
+  phone: string;
+  email: string;
+  instagram: string;
+  youtube: string;
+  facebook: string;
+  blog: string;
+  twitter: string;
 }
 
 export interface IFormProps {
