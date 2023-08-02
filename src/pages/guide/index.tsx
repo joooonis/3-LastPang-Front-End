@@ -17,7 +17,7 @@ import {
   Sns,
 } from '@/components/steps';
 import { IFormValues } from '@/types/form';
-import { useProfileStore } from '@/components/features/profileStore';
+import { useProfileStore } from '@/components/store/profileStore';
 
 import * as styles from './guide.css';
 import { NextPageWithLayout } from '../_app';
@@ -121,7 +121,7 @@ const Guide: NextPageWithLayout = () => {
         <div className={styles.hover} onClick={prevStep}>
           <Image src="/arrow_left.svg" width={24} height={24} alt="back" />
         </div>
-        <div className={styles.hover}>
+        <div className={styles.hover} onClick={() => router.push('/')}>
           <Image src="/wity_main_logo.svg" width={58} height={24} alt="logo" />
         </div>
         <div

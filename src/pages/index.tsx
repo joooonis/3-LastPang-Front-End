@@ -1,7 +1,5 @@
-import Head from 'next/head';
-
 import Layout from '@/components/common/Layout';
-import { useProfileStore } from '@/components/features/profileStore';
+import { useProfileStore } from '@/components/store/profileStore';
 
 import { NextPageWithLayout } from './_app';
 

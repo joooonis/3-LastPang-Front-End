@@ -1,11 +1,11 @@
 import Image from 'next/image';
 
 import {
-  profileWrapper,
   avatar,
-  profileName,
   featuredAvatar,
   featuredName,
+  profileName,
+  profileWrapper,
 } from './profile.css';
 
 interface Props {
@@ -22,10 +22,12 @@ export default function Avatar({ featured, name, src }: Props) {
     <div className={profileWrapper}>
       <div className={avatarClass}>
         <Image
+          style={{
+            objectFit: `cover`,
+          }}
           src={src || '/avatar_default.svg'}
           alt="Profile Avatar"
-          width={50}
-          height={50}
+          fill
         />
       </div>
       <p className={nameClass}>{name}</p>
