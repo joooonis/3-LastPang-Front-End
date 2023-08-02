@@ -1,4 +1,4 @@
-import { InputProps } from '@/types/form';
+import { IFormProps } from '@/types/form';
 import * as styles from './steps.css';
 
 const CARDS = [
@@ -20,7 +20,7 @@ const CARDS = [
   },
 ];
 
-interface Props extends InputProps {}
+interface Props extends IFormProps {}
 
 export default function Purpose({ setValue, watch }: Props) {
   const handleClick = (purpose: string) => {

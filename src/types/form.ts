@@ -2,7 +2,7 @@ import { UseFormRegister } from 'react-hook-form';
 
 export interface IFormValues {
   purpose: string;
-  profile: string;
+  profile?: FileList | null;
   nickname: string;
   introduce: string;
   portfolioTitle: string;

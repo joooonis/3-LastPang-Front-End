@@ -90,6 +90,8 @@ globalStyle(`${purpose} p`, {
 });
 
 export const avatarContainer = style({
+  overflow: `hidden`,
+  position: `relative`,
   margin: `0 auto`,
   marginTop: 40,
   display: `flex`,

@@ -57,11 +57,12 @@ const Guide: NextPageWithLayout = () => {
     formState: { errors },
   } = useForm<IFormValues>();
 
-  console.log('watch', watch());
-  const onSubmit = (data: IFormValues) => console.log(data);
+  const onSubmit = (data: IFormValues) => {
+    console.log(data);
+  };
 
   return (
-    <div onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <nav className={styles.header}>
         <div className={styles.hover} onClick={prevStep}>
           <Image src="/arrow_left.svg" width={24} height={24} alt="back" />
@@ -94,7 +95,7 @@ const Guide: NextPageWithLayout = () => {
         {steps === 'purpose' && (
           <PurPose register={register} setValue={setValue} watch={watch} />
         )}
-        {steps === 'profile' && <Profile />}
+        {steps === 'profile' && <Profile register={register} watch={watch} />}
         {steps === 'nickname' && <Nickname register={register} />}
         {steps === 'introduce' && <Introduce register={register} />}
         {steps === 'portfolio' && <Portfolio register={register} />}
@@ -108,7 +109,7 @@ const Guide: NextPageWithLayout = () => {
       >
         <Button onClick={nextStep}>다음</Button>
       </div>
-    </div>
+    </form>
   );
 };
 

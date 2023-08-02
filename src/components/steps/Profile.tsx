@@ -1,8 +1,24 @@
 import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
+
+import { IFormProps } from '@/types/form';
+
 import * as styles from './steps.css';
 import Button from '../common/Button';
 
-export default function Profile() {
+interface Props extends IFormProps {}
+
+export default function Profile({ register, watch }: Props) {
+  const [preview, setPreview] = useState('');
+  const avatar = watch && watch('profile');
+
+  useEffect(() => {
+    if (avatar && avatar.length > 0) {
+      const file = avatar[0];
+      setPreview(URL.createObjectURL(file as any));
+    }
+  }, [avatar]);
+
   return (
     <div className={styles.cardWrapper}>
       <div>
@@ -12,17 +28,35 @@ export default function Profile() {
           사진을 선택해주세요.
         </h2>
       </div>
-      <div>
+      <label htmlFor="picture">
         <div className={styles.avatarContainer}>
-          <Image src="/user.svg" width={60} height={60} alt="avatar" />
+          {preview ? (
+            <Image
+              src={preview}
+              fill
+              style={{
+                objectFit: `cover`,
+              }}
+              alt="avatar"
+            />
+          ) : (
+            <Image src="/user.svg" width={60} height={60} alt="avatar" />
+          )}
         </div>
-      </div>
+      </label>
+
       <div
         style={{
           marginTop: 40,
         }}
       >
-        <Button variant="outline">
+        <Button
+          onClick={() => {
+            const input = document.getElementById('picture');
+            input && input.click();
+          }}
+          variant="outline"
+        >
           <Image
             style={{
               marginRight: 8,
@@ -35,6 +69,16 @@ export default function Profile() {
           사진 찾아보기
         </Button>
       </div>
+
+      <input
+        {...register('profile')}
+        id="picture"
+        type="file"
+        style={{
+          display: `none`,
+        }}
+        accept="image/*"
+      />
     </div>
   );
 }
