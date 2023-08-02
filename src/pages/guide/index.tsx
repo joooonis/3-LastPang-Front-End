@@ -97,9 +97,9 @@ const Guide: NextPageWithLayout = () => {
         {steps === 'profile' && <Profile />}
         {steps === 'nickname' && <Nickname register={register} />}
         {steps === 'introduce' && <Introduce register={register} />}
-        {steps === 'portfolio' && <Portfolio />}
-        {steps === 'contact' && <Contact />}
-        {steps === 'sns' && <Sns />}
+        {steps === 'portfolio' && <Portfolio register={register} />}
+        {steps === 'contact' && <Contact register={register} />}
+        {steps === 'sns' && <Sns register={register} />}
       </div>
       <div
         style={{

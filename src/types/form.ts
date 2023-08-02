@@ -5,12 +5,13 @@ export interface IFormValues {
   profile: string;
   nickname: string;
   introduce: string;
-  portfolio: string;
+  portfolioTitle: string;
+  portfolioLink: string;
   contact: string;
   sns: string;
 }
 
-export interface InputProps {
+export interface IFormProps {
   register: UseFormRegister<IFormValues>;
   watch?: (name: keyof IFormValues) => string;
   setValue?: (name: keyof IFormValues, value: string) => void;

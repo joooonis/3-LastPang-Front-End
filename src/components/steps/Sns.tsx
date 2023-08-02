@@ -1,8 +1,11 @@
 import Image from 'next/image';
 import Input from '../common/Input';
 import * as styles from './steps.css';
+import { IFormProps } from '@/types/form';
 
-export default function Sns() {
+interface Props extends IFormProps {}
+
+export default function Sns({ register }: Props) {
   return (
     <div className={styles.cardWrapper}>
       <div>
@@ -24,6 +27,8 @@ export default function Sns() {
             <span>인스타그램</span>
           </label>
           <Input
+            label="instagram"
+            register={register}
             id="instagram"
             name="instagram"
             type="text"
@@ -41,6 +46,8 @@ export default function Sns() {
             <span>유튜브</span>
           </label>
           <Input
+            label="youtube"
+            register={register}
             id="youtube"
             name="youtube"
             type="text"
@@ -58,6 +65,8 @@ export default function Sns() {
             <span>블로그</span>
           </label>
           <Input
+            label="blog"
+            register={register}
             id="blog"
             name="blog"
             type="text"
@@ -75,6 +84,8 @@ export default function Sns() {
             <span>트위터</span>
           </label>
           <Input
+            label="twitter"
+            register={register}
             id="twitter"
             name="twitter"
             type="text"
@@ -92,6 +103,8 @@ export default function Sns() {
             <span>페이스북</span>
           </label>
           <Input
+            label="facebook"
+            register={register}
             id="facebook"
             name="facebook"
             type="text"

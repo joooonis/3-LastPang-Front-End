@@ -2,8 +2,11 @@ import Input from '@/components/common/Input';
 import * as styles from './steps.css';
 import Image from 'next/image';
 import Button from '../common/Button';
+import { IFormProps } from '@/types/form';
 
-export default function Portfolio() {
+interface Props extends IFormProps {}
+
+export default function Portfolio({ register }: Props) {
   return (
     <div className={styles.cardWrapper}>
       <div>
@@ -23,6 +26,8 @@ export default function Portfolio() {
           />
         </label>
         <Input
+          label="portfolioTitle"
+          register={register}
           id="portfolio"
           name="portfolio"
           type="text"
@@ -36,7 +41,12 @@ export default function Portfolio() {
         }}
       />
       <div className={styles.flex}>
-        <Input type="text" placeholder="http://example.com" />
+        <Input
+          label="PortfolioLink"
+          register={register}
+          type="text"
+          placeholder="http://example.com"
+        />
       </div>
       <div
         style={{

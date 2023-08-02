@@ -1,8 +1,11 @@
 import Image from 'next/image';
 import Input from '../common/Input';
 import * as styles from './steps.css';
+import { IFormProps } from '@/types/form';
 
-export default function Contact() {
+interface Props extends IFormProps {}
+
+export default function Contact({ register }: Props) {
   return (
     <div className={styles.cardWrapper}>
       <div>
@@ -30,6 +33,8 @@ export default function Contact() {
               />
             </label>
             <Input
+              label="email"
+              register={register}
               id="email"
               name="email"
               type="email"
@@ -59,6 +64,8 @@ export default function Contact() {
               />
             </label>
             <Input
+              label="phone"
+              register={register}
               id="phone"
               name="phone"
               type="phone"
