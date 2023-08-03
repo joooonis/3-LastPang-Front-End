@@ -5,7 +5,6 @@ type InputProps = IFormProps & React.InputHTMLAttributes<HTMLInputElement>;
 interface Props extends InputProps {
   type: string;
   placeholder: string;
-
   [key: string]: any;
 }
 export default function Input({

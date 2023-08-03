@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { useProfileStore } from '@/components/store/profileStore';
 
 import ProfileAddBtn from './AddBtn';
@@ -6,13 +8,25 @@ import { profileContainer } from './profile.css';
 
 export default function Profile() {
   const profile = useProfileStore((state) => state.profiles);
+  const currentProfile = useProfileStore((state) => state.currentProfile);
+  const selectProfile = useProfileStore((state) => state.selectProfile);
+
+  const handleProfileClick = (profile: any) => {
+    selectProfile(profile);
+  };
+
+  useEffect(() => {
+    if (profile.length === 0) return;
+    selectProfile(profile[profile.length - 1]);
+  }, [profile]);
 
   return (
     <div className={profileContainer}>
-      {/* TEST: 더미 데이터 */}
-      {profile.map((profile) => (
+      {profile.map((profile, index) => (
         <Avatar
+          onClick={() => handleProfileClick(profile)}
           key={profile.nickname}
+          featured={profile === currentProfile}
           name={profile.nickname || 'profile'}
           src={
             (profile.profile &&
@@ -21,7 +35,6 @@ export default function Profile() {
           }
         />
       ))}
-
       <ProfileAddBtn />
     </div>
   );

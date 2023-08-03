@@ -18,7 +18,12 @@ export const profileWrapper = style({
   display: `flex`,
   flexDirection: `column`,
   alignItems: `center`,
-  gap: `0.1rem`,
+  marginRight: 6,
+  cursor: `pointer`,
+  transition: `opacity 0.2s ease-in-out`,
+  ':hover': {
+    opacity: 0.9,
+  },
 });
 
 export const avatar = style({
@@ -27,8 +32,8 @@ export const avatar = style({
   display: `flex`,
   alignItems: `center`,
   justifyContent: `center`,
-  width: `50px`,
-  height: `50px`,
+  width: `60px`,
+  height: `60px`,
   flexShrink: `0`,
   borderRadius: `50%`,
 });

@@ -66,7 +66,7 @@ const Guide: NextPageWithLayout = () => {
     if (steps !== 'sns') return;
     if (data.instagram === undefined) return;
     addProfile(data);
-    router.push('/');
+    router.push('/profile');
   };
 
   useEffect(() => {

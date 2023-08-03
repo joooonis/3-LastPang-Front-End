@@ -9,17 +9,18 @@ import {
 } from './profile.css';
 
 interface Props {
+  onClick?: () => void;
   featured?: boolean;
   name: string;
   src?: string;
 }
 
-export default function Avatar({ featured, name, src }: Props) {
+export default function Avatar({ onClick, featured, name, src }: Props) {
   const avatarClass = `${avatar} ${featured && featuredAvatar}`;
   const nameClass = `${profileName} ${featured && featuredName}`;
 
   return (
-    <div className={profileWrapper}>
+    <div onClick={onClick} className={profileWrapper}>
       <div className={avatarClass}>
         <Image
           style={{
