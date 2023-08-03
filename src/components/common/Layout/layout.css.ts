@@ -4,6 +4,7 @@ import { theme } from '@/styles/theme.css';
 import { breakpoints } from '@/styles/theme.css';
 
 export const wrapper = style({
+  position: `relative`,
   backgroundColor: theme.colors.background,
   color: theme.colors.body,
   height: `100vh`,
