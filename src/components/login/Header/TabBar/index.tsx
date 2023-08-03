@@ -19,13 +19,9 @@ export default function TabBar() {
   return (
     <nav className={tabBarContainer}>
       {tabs.map((tab) => (
-        <Link
-          href={`/${tab.url}`}
-          className={tabClass(tab.menu)}
-          key={tab.menu}
-        >
+        <div className={tabClass(tab.menu)} key={tab.menu}>
           {tab.menu}
-        </Link>
+        </div>
       ))}
     </nav>
   );
