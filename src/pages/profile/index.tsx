@@ -1,39 +1,20 @@
 import Layout from '@/components/common/Layout';
 import { useProfileStore } from '@/components/store/profileStore';
 
-import * as styles from './profile.css';
+import * as styles from '@/styles/profile.css';
 
 import { NextPageWithLayout } from '../_app';
 import Image from 'next/image';
 import Input from '@/components/common/Input';
 import { useForm } from 'react-hook-form';
 import { IFormValues } from '@/types/form';
-import { style } from '@vanilla-extract/css';
 import { theme } from '@/styles/theme.css';
 import Button from '@/components/common/Button';
 
-import { useState, useEffect } from 'react';
-
-const flex = {
-  display: `flex`,
-  justifyContent: `space-between`,
-  alignItems: `center`,
-};
-
-const label = {
-  display: `flex`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  width: 38,
-  height: 38,
-  marginRight: theme.space.xs,
-  backgroundColor: theme.colors.grey[100],
-  borderRadius: theme.radii.sm,
-};
+import { useEffect } from 'react';
 
 const Profile: NextPageWithLayout = () => {
   const currentProfile = useProfileStore((state) => state.currentProfile);
-  const [profile, setProfile] = useState<Partial<IFormValues>>();
   const { register, setValue } = useForm<IFormValues>();
 
   useEffect(() => {
@@ -46,7 +27,7 @@ const Profile: NextPageWithLayout = () => {
   return (
     <>
       <main>
-        {profile && (
+        {currentProfile && (
           <>
             <div
               style={{
@@ -66,7 +47,7 @@ const Profile: NextPageWithLayout = () => {
                 boxShadow: `0px 4px 12px rgba(0, 0, 0, 0.1)`,
               }}
               className={styles.cardsWrapper}
-              key={profile.nickname}
+              key={currentProfile.nickname}
             >
               <div
                 style={{
@@ -93,8 +74,10 @@ const Profile: NextPageWithLayout = () => {
                       objectFit: `cover`,
                     }}
                     src={
-                      (profile.profile &&
-                        URL.createObjectURL(profile.profile[0] as any)) ||
+                      (currentProfile.profile &&
+                        URL.createObjectURL(
+                          currentProfile.profile[0] as any,
+                        )) ||
                       `/profile_default.svg`
                     }
                     alt="Profile Avatar"
@@ -117,7 +100,6 @@ const Profile: NextPageWithLayout = () => {
                 </p>
                 <Input
                   label="nickname"
-                  value={profile.nickname}
                   register={register}
                   type="text"
                   placeholder="d"

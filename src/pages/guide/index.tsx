@@ -19,7 +19,7 @@ import {
 import { IFormValues } from '@/types/form';
 import { useProfileStore } from '@/components/store/profileStore';
 
-import * as styles from './guide.css';
+import * as styles from '@/styles/guide.css';
 import { NextPageWithLayout } from '../_app';
 
 const STEPS = [
