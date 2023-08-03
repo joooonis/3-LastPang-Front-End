@@ -64,7 +64,7 @@ const Guide: NextPageWithLayout = () => {
 
   const onSubmit = (data: IFormValues) => {
     if (steps !== 'sns') return;
-    if (data.instagram === undefined) return;
+    if (steps === 'sns' && data.instagram === '') return;
     addProfile(data);
     router.push('/profile');
   };
