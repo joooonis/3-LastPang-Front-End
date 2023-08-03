@@ -14,10 +14,11 @@ export interface IFormValues {
   facebook: string;
   blog: string;
   twitter: string;
+  [key: string]: any;
 }
 
 export interface IFormProps {
   register: UseFormRegister<IFormValues>;
   watch?: (name: keyof IFormValues) => string;
-  setValue?: (name: keyof IFormValues, value: string) => void;
+  setValue?: (name: string, value: string) => void;
 }

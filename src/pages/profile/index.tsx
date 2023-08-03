@@ -34,12 +34,10 @@ const label = {
 const Profile: NextPageWithLayout = () => {
   const currentProfile = useProfileStore((state) => state.currentProfile);
   const [profile, setProfile] = useState<Partial<IFormValues>>();
-
   const { register, setValue } = useForm<IFormValues>();
 
   useEffect(() => {
     if (currentProfile) {
-      console.log(currentProfile);
       for (const key in currentProfile) {
         setValue(key, currentProfile[key]);
       }
