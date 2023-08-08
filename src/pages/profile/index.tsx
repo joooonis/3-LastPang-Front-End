@@ -1,5 +1,5 @@
 import Layout from '@/components/common/Layout';
-import { useProfileStore } from '@/components/store/profileStore';
+import { useProfileStore } from '@/store/profileStore';
 
 import * as styles from '@/styles/profile.css';
 

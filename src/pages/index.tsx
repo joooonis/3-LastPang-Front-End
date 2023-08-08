@@ -1,5 +1,5 @@
 import Layout from '@/components/common/Layout';
-import { useProfileStore } from '@/components/store/profileStore';
+import { useProfileStore } from '@/store/profileStore';
 
 import { NextPageWithLayout } from './_app';
 import useModal from '@/hooks/useModal';

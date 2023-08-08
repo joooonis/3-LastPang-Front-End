@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useProfileStore } from '@/components/store/profileStore';
+import { useProfileStore } from '@/store/profileStore';
 
 import ProfileAddBtn from './AddBtn';
 import Avatar from './Avatar';
